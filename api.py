@@ -1,14 +1,15 @@
-from flask import Flask
-from . import blockchain as bc
+import uuid
+from flask import Flask, jsonify, request
+from blockchain import Blockchain
 
 # Instantiate our Node
 app = Flask(__name__)
 
 # Generate a globally unique address for this node
-node_identifier = str(uuid4()).replace('-', '')
+node_identifier = str(uuid.uuid4()).replace('-', '')
 
 # Instantiate the Blockchain
-blockchain = bc.Blockchain()
+blockchain = Blockchain()
 
 
 @app.route('/mine', methods=['GET'])

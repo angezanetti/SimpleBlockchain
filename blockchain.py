@@ -10,7 +10,8 @@ class Blockchain(object):
         # Create the genesis block
         self.new_block(previous_hash=1, proof=100)
 
-    def new_block(self):
+    def new_block(self, proof, previous_hash):
+
         """
         Create a new Block in the Blockchain
         :param proof: <int> The proof given by the Proof of Work algorithm
@@ -32,7 +33,8 @@ class Blockchain(object):
 
         return block
 
-    def new_transaction(self):
+    def new_transaction(self, sender, recipient, amount):
+
         """
                Creates a new transaction to go into the next mined Block
                :param sender: <str> Address of the Sender
