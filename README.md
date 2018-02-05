@@ -30,3 +30,27 @@ $ pipenv install
 5. Run the server:
     * `$ pipenv run python api.py` 
     
+# Usage
+
+### Mining
+mining a block by making a `GET` request to `http://localhost:5000/mine`
+
+### New transaction
+
+You can create a new transaction by making a `POST` request on `http://localhost:5000/transactions/new`
+The body should be:
+```
+'{
+ "sender": "d4ee26eee15148ee92c6cd394edd974e",
+ "recipient": "someone-other-address",
+ "amount": 5
+}'
+```
+
+You can also inspect the chain with `http://localhost:5000/chain`
+
+### Nodes
+
+You can register a new node on `http://localhost:5000/nodes/register`
+
+And manage the conflicts on `http://localhost:5000/nodes/resolve`
